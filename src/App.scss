@@ -33,9 +33,13 @@ $amarillo:#ffe600;
 $gris1:#333333;
 $gris2:#999999;
 $gris3:#eeeeee;
-
+body{
+    background: $gris3
+}
+//header
 .navbar{
     background: $amarillo;
+    margin-bottom: 20px;
     .navbar-brand{
         overflow: hidden;
         text-indent: -999px;
@@ -63,5 +67,73 @@ $gris3:#eeeeee;
                 width: 46px;
             }
         }
+    }
+}
+
+//list-items
+.list-items{
+    margin-bottom: 20px;
+    display: block;
+    border-radius: 5px;
+    overflow: hidden;
+    .item{
+        background: #fff;
+        padding: 15px 0;
+        &:after{
+            content:"";
+            width: calc(100% - 30px);
+            height: 1px;
+            background: $gris3;
+            display: block;
+            transform: translate(15px,15px);
+        }
+        span{
+            clear: both;
+            display: block;
+            text-align: left;
+        }
+        .zone{
+            text-align: right;
+            font-size: 14px;
+            color: $gris2;
+            margin-right: 5%;
+        }
+        .price{
+            margin-top: 15px;
+            font-size: 30px;
+        }
+        .title{
+            text-align: left;
+            font-size: 25px;
+            max-width: 60%;
+            a{
+                line-height: 1.2em;
+            }
+        }
+        img{
+            border-radius: 5px;
+            width: 100%;
+            height: auto;
+        }
+        .free-shipping{
+            text-indent: -999px;
+            position: relative;
+            background: url(assets/ic_shipping.png) no-repeat center;
+            width: 20px;
+            height: auto;
+            display: inline-block;
+            margin-left: 15px;
+        }
+    }
+}
+
+//categories
+.categories{
+    color: $gris2;
+    margin-bottom: 20px;
+    span+span:before{
+        content: ">";
+        margin: 0 10px;
+        color:$gris2;
     }
 }
