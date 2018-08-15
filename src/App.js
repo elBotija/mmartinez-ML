@@ -10,7 +10,9 @@ class App extends Component {
         super()
         this.state = {
             query: '',
-            search: []
+            search: [],
+            item:[],
+            itemDescription:[]
         }
         //this.query=''
 
@@ -18,7 +20,7 @@ class App extends Component {
         this.handleClick = this.handleClick.bind(this);
     }
     handleClick(e){
-        axios.get('https://api.mercadolibre.com/sites/MLA/search?q=' + this.state.query)
+        axios.get('https://api.mercadolibre.com/sites/MLA/search?q=' + this.state.query+'&limit=4')
             .then(response => {
                 console.log('res')
                 console.log(response)
@@ -30,8 +32,18 @@ class App extends Component {
     }
 
     detailProduct(id){
-        axios.get('https://api.mercadolibre.com/sites/MLA/search?q=' + id)
-            .then(response => console.log(response))
+        console.log('id')
+        console.log(id)
+        axios.get('https://api.mercadolibre.com/items/'+id)
+            .then(response => {
+                this.setState({item: response.data})
+                console.log(this.state.item)
+            });
+        axios.get('https://api.mercadolibre.com/items/'+id+'/description')
+        .then(response => {
+            this.setState({itemDescription: response.data})
+            console.log(this.state.itemDescription)
+        })
     }
 
     handleChange(e){
@@ -53,26 +65,25 @@ class App extends Component {
             <input name="query" onChange={this.handleChange} value={this.state.query} type="text" placeholder="Busqueda"/>
             <button type="submit" className="btn light-blue darken-4">buscar</button>
         </form>
+            {
+                this.state.search.map(search => {
+                    return (
+                        <div key={search.id}>
 
-        {
-            this.state.search.map(search => {
-                return (
-                    <tr key={search._id}>
-
-                            <td>
-                                <a onClick={() => this.detailProduct(search._id)}>
-                                    {search.title}
-                                </a>
-                            </td>
-                            <td>
-                                <a onClick={() => this.detailProduct(search._id)}>
-                                    {search.price}
-                                </a>
-                            </td>
-                    </tr>
-                )
-            })
-        }
+                                <span>
+                                    <a onClick={() => this.detailProduct(search.id)}>
+                                        {search.title}
+                                    </a>
+                                </span>
+                                <span>
+                                    <a onClick={() => this.detailProduct(search.id)}>
+                                        {search.price}
+                                    </a>
+                                </span>
+                        </div>
+                    )
+                })
+            }
 
         <p className="App-intro">
           To get started, edit <code>src/App.js</code> and save to reload.
