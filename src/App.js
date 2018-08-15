@@ -14,7 +14,6 @@ class App extends Component {
             item:[],
             itemDescription:[]
         }
-        //this.query=''
 
         this.handleChange = this.handleChange.bind(this);
         this.handleClick = this.handleClick.bind(this);
@@ -84,10 +83,6 @@ class App extends Component {
                     )
                 })
             }
-
-        <p className="App-intro">
-          To get started, edit <code>src/App.js</code> and save to reload.
-        </p>
       </div>
     );
   }
