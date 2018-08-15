@@ -56,14 +56,26 @@ class App extends Component {
   render() {
     return (
       <div className="App">
-        <header className="App-header">
+        {/* <header className="App-header">
           <img src={logo} className="App-logo" alt="logo" />
           <h1 className="App-title">Welcome to React</h1>
-        </header>
-        <form onSubmit={this.handleClick}>
-            <input name="query" onChange={this.handleChange} value={this.state.query} type="text" placeholder="Busqueda"/>
-            <button type="submit" className="btn light-blue darken-4">buscar</button>
-        </form>
+        </header> */}
+
+
+    <nav className="navbar navbar-expand-lg">
+        <div className="container col-md-10">
+            <a className="navbar-brand col-1" href="/">
+                Mercado Libre Argentina - Donde comprar y vender de todo
+            </a>
+            <form  onSubmit={this.handleClick} className="input-group col-11">
+                <input type="text" name="query" onChange={this.handleChange} value={this.state.query} className="form-control" placeholder="Nunca dejes de buscar" autocomplete="off"/>
+                <div className="input-group-append">
+                    <button className="btn" onClick={this.handleClick} type="button">Buscar</button>
+                </div>
+            </form>
+        </div>
+    </nav>
+
             {
                 this.state.search.map(search => {
                     return (

@@ -26,3 +26,42 @@
   from { transform: rotate(0deg); }
   to { transform: rotate(360deg); }
 }
+
+
+//app ML
+$amarillo:#ffe600;
+$gris1:#333333;
+$gris2:#999999;
+$gris3:#eeeeee;
+
+.navbar{
+    background: $amarillo;
+    .navbar-brand{
+        overflow: hidden;
+        text-indent: -999px;
+        position: relative;
+        background: url(assets/Logo_ML.png) no-repeat center;
+        width: 60px;
+        height: auto;
+    }
+    .input-group{
+        padding-left: 0;
+        input{
+            font-size: 18px;
+            border: none;
+            &:focus,&:active{
+                border: none;
+                outline: none;
+                box-shadow: none;
+            }
+        }
+        .input-group-append{
+            .btn{
+                overflow: hidden;
+                text-indent: -999px;
+                background: url(assets/ic_Search.png) no-repeat $gris3 center;
+                width: 46px;
+            }
+        }
+    }
+}
