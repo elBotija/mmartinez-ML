@@ -1,0 +1,59 @@
+@import './variables';
+.product{
+    background: #fff;
+    border-radius: 5px;
+    text-align: left;
+    padding-top: $airx2;
+    figure{
+        margin-bottom: 150px;
+        img{
+            max-width: 680px;
+        }
+    }
+    .description{
+        text-align: left;
+        margin-left: $airx2;
+        span{
+            font-size: 28px;
+            margin-bottom: $airx2;
+            display: block;
+        }
+        p{
+            color: $gris2;
+            margin-bottom: $airx2;
+            font-size: 16px;
+        }
+    }
+    .condition,.sales{
+        color: $gris1;
+        display: inline-block;
+        font-size: 14px;
+    }
+    .price{
+        color: $gris1;
+        clear: both;
+        display: block;
+        font-size: 46px;
+        margin-bottom: $airx2;
+        small{
+            vertical-align: super;
+            font-size: 30px;
+            transform: translateX(-10px);
+            display: inline-block;
+        }
+    }
+    .title{
+        color: $gris1;
+        font-size: 24px;
+        padding-top: $air;
+        margin-bottom: $airx2;
+        font-weight: 700;
+    }
+    .buy{
+        background: $azul;
+        color: #fff;
+        width: calc(100% - 32px);
+        font-size: 20px;
+        padding: 10px;
+    }
+}

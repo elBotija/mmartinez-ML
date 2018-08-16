@@ -1,0 +1,33 @@
+$amarillo:#ffe600;
+$gris1:#333333;
+$gris2:#999999;
+$gris3:#eeeeee;
+$gris4:#666666;
+$azul:#3483fa;
+
+$air:16px;
+$airx2:32px;
+
+@font-face {
+    font-family: 'nova';
+    font-style: normal;
+    font-weight: 300;
+    src:  url('https://mlstaticquic-a.akamaihd.net/ui/webfonts/v4.0.0/proxima-nova/proxima-nova-300.woff2') format('woff2'),
+}
+@font-face {
+    font-family: 'nova';
+    font-style: normal;
+    font-weight: 400;
+    src:  url('https://mlstaticquic-a.akamaihd.net/ui/webfonts/v4.0.0/proxima-nova/proxima-nova-400.woff2') format('woff2'),
+}
+@font-face {
+    font-family: 'nova';
+    font-style: normal;
+    font-weight: 700;
+    src:  url('https://mlstaticquic-a.akamaihd.net/ui/webfonts/v4.0.0/proxima-nova/proxima-nova-700.woff2') format('woff2'),
+}
+$font-main: nova;
+
+body{
+    font-family: $font-main;
+}
