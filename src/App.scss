@@ -50,6 +50,12 @@ body{
         text-indent: -999px;
         position: relative;
         background: url(assets/Logo_ML.png) no-repeat center;
+        @media
+        (-webkit-min-device-pixel-ratio: 2),
+        (min-resolution: 192dpi) {
+            background: url(assets/Logo_ML@2x.png) no-repeat center;
+            background-size: contain;
+        }
         width: 60px;
         height: auto;
     }
@@ -69,6 +75,12 @@ body{
                 overflow: hidden;
                 text-indent: -999px;
                 background: url(assets/ic_Search.png) no-repeat $gris3 center;
+                @media
+                (-webkit-min-device-pixel-ratio: 2),
+                (min-resolution: 192dpi) {
+                    background: url(assets/ic_Search@2x.png) no-repeat $gris3 center;
+                    background-size: 23px;
+                }
                 width: 46px;
                 &:focus,&:active{
                     border: none;

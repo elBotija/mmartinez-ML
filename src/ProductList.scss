@@ -72,6 +72,12 @@
             text-indent: -999px;
             position: relative;
             background: url(assets/ic_shipping.png) no-repeat center;
+            @media
+            (-webkit-min-device-pixel-ratio: 2),
+            (min-resolution: 192dpi) {
+                background: url(assets/ic_shipping.png) no-repeat center;
+                background-size: contain;
+            }
             width: 20px;
             height: auto;
             display: inline-block;
